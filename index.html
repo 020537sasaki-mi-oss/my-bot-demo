@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チャットボット導入デモサイト</title>
-    <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f4f7f6; }
-        header { background: #2c3e50; color: white; padding: 60px 20px; text-align: center; }
-        .container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        h1 { margin: 0; font-size: 2.5em; }
-        p { line-height: 1.8; font-size: 1.1em; }
-        .badge { background: #e74c3c; color: white; padding: 5px 10px; border-radius: 4px; font-weight: bold; }
-    </style>
-</head>
-<body>
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-<header>
-    <h1>My Bot Demo Site</h1>
-    <p>GCP + GitHub Pages で作る後付けチャットボットの見本です</p>
-</header>
+<gen-search-widget
+  configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+  triggerId="searchWidgetTrigger">
+</gen-search-widget>
 
-<div class="container">
-    <h2>既存のサイトに「1行」足すだけ</h2>
-    <p>このページは、普通のHTMLで作られたシンプルなWebサイトです。</p>
-    <p>右下を見てください。JavaScriptを1つ読み込むだけで、<span class="badge">AIチャットボット</span>が後付けされています。</p>
-    <hr>
-    <p>自作のウィジェット（Shadow DOM）を使っているので、元のサイトのデザインを一切壊さずに導入できるのがメリットです。</p>
+<div style="text-align: center; margin-top: 50px;">
+    <input type="text" placeholder="AIに質問してみる..." id="searchWidgetTrigger" 
+           style="padding: 15px; width: 300px; border-radius: 25px; border: 1px solid #ccc;">
 </div>
-
-<script src="chat-widget.js"></script>
-
-</body>
-</html>
