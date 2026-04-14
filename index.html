@@ -2,10 +2,24 @@
 
 <gen-search-widget
   configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-  triggerId="searchWidgetTrigger">
+  triggerId="fixedChatTrigger">
 </gen-search-widget>
 
-<div style="text-align: center; margin-top: 50px;">
-    <input type="text" placeholder="AIに質問してみる..." id="searchWidgetTrigger" 
-           style="padding: 15px; width: 300px; border-radius: 25px; border: 1px solid #ccc;">
+<div id="fixedChatTrigger" style="
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    width: 60px; 
+    height: 60px; 
+    background-color: #4285F4; 
+    border-radius: 50%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); 
+    z-index: 9999;">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
 </div>
