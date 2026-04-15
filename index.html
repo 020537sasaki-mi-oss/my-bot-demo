@@ -1,18 +1,33 @@
-<body>
-    <h2 style="text-align: center; font-family: sans-serif; margin-top: 30px;">
-        社内システム用AIチャット（インライン版）
-    </h2>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Search テスト</title>
+</head>
 
-    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+<body style="margin: 0; font-family: sans-serif;">
 
-    <div style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        <gen-search-widget
-          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-          display-mode="inline">
-        </gen-search-widget>
-    </div>
+  <h2 style="text-align: center; margin-top: 30px;">
+    社内システム用AIチャット（インライン版）
+  </h2>
 
-    <p style="text-align: center; color: #666; font-size: 12px;">
-        ※反映まで時間がかかる場合があります。reCAPTCHAロゴが出ていれば通信は成功しています。
-    </p>
+  <!-- Googleのウィジェット読み込み -->
+  <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+
+  <!-- 余計なCSSを排除した安全なコンテナ -->
+  <div style="width: 100%; max-width: 800px; margin: 30px auto;">
+    
+    <gen-search-widget
+      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+      display-mode="inline">
+    </gen-search-widget>
+
+  </div>
+
+  <p style="text-align: center; color: #666; font-size: 12px;">
+    ※反映まで時間がかかる場合があります。reCAPTCHAロゴが出ていれば通信は成功しています。
+  </p>
+
 </body>
+</html>
