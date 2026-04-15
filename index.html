@@ -12,11 +12,14 @@
     社内システム用AIチャット（インライン版）
   </h2>
 
-  <!-- Googleのウィジェット読み込み -->
+  <p style="text-align: center; color: #666; font-size: 12px;">
+    ※反映まで時間がかかる場合があります。reCAPTCHAロゴが出ていれば通信は成功しています。
+  </p>
+
   <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-  <!-- 余計なCSSを排除した安全なコンテナ -->
-  <div style="width: 100%; max-width: 800px; margin: 30px auto;">
+  <!-- ★ここ重要：heightつける -->
+  <div style="width: 100%; max-width: 800px; height: 600px; margin: 30px auto;">
     
     <gen-search-widget
       configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
@@ -24,10 +27,6 @@
     </gen-search-widget>
 
   </div>
-
-  <p style="text-align: center; color: #666; font-size: 12px;">
-    ※反映まで時間がかかる場合があります。reCAPTCHAロゴが出ていれば通信は成功しています。
-  </p>
 
 </body>
 </html>
