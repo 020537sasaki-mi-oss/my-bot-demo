@@ -44,15 +44,19 @@
                 const query = input.value;
                 if (!query) return;
 
-                console.log("検索実行:", query);
+                console.log("検索実行中:", query);
 
-                // 💡 Googleウィジェットが準備できてから命令を送る「安全な書き方」
-                if (widget && typeof widget.search === 'function') {
+                // 💡 強制検索の3連撃
+                // 1. search() 関数を叩く
+                if (typeof widget.search === 'function') {
                     widget.search(query);
-                } else {
-                    // もし widget.search が直接使えない場合の予備命令
-                    widget.setAttribute('search-query', query);
                 }
+                
+                // 2. 属性を書き換えて、Google側に「変更」を検知させる
+                widget.setAttribute('search-query', query);
+                
+                // 3. inputイベントを捏造して、ウィジェットに「入力された」と思わせる
+                widget.dispatchEvent(new Event('input', { bubbles: true }));
             }
         });
     </script>
