@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>AIチャット 埋め込み完了版</title>
+    <title>AIチャット 埋め込み成功版</title>
 </head>
 <body>
 
@@ -10,11 +10,13 @@
 
     <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <div style="width: 100%; max-width: 800px; height: 700px; border: 1px solid #ddd; border-radius: 8px; margin: 20px auto; overflow: hidden;">
+    <div style="width: 100%; max-width: 800px; height: 700px; border: 1px solid #ddd; border-radius: 8px; margin: 20px auto; overflow: hidden; background-color: #f9f9f9;">
         
         <gen-search-widget
           configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-          display-mode="inline">
+          display-mode="inline"
+          search-ads-enabled="true"
+          show-search-bar="true">
         </gen-search-widget>
 
     </div>
