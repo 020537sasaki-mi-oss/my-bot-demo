@@ -1,9 +1,66 @@
-<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>AI検索 最終解決</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f5f5f5; }
+        .main-wrapper { max-width: 600px; margin: 0 auto; }
+        .search-box {
+            width: 100%; padding: 15px; font-size: 16px;
+            border: 2px solid #4285F4; border-radius: 8px;
+            box-sizing: border-box; margin-bottom: 15px; outline: none;
+        }
+        .ai-result-window {
+            width: 100%; height: 600px; border: 1px solid #ddd;
+            border-radius: 8px; background-color: white; overflow: hidden;
+        }
+    </style>
+</head>
+<body>
 
-<gen-search-widget
-  configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-  display-mode="floating"
-  launcher-text="AIに質問する"
-  horizontal-position="right"
-  vertical-position="bottom">
-</gen-search-widget>
+    <div class="main-wrapper">
+        <h2 style="text-align: center;">社内AI検索</h2>
+        <input type="text" id="myInput" class="search-box" placeholder="質問を入力してEnter...">
+        
+        <div class="ai-result-window">
+            <gen-search-widget
+              id="myWidget"
+              configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+              display-mode="inline">
+            </gen-search-widget>
+        </div>
+    </div>
+
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+
+    <script>
+        const input = document.getElementById('myInput');
+        const widget = document.getElementById('myWidget');
+
+        input.addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter') {
+                const query = input.value;
+                if (!query) return;
+
+                console.log("検索リクエスト送信:", query);
+
+                // 💡 ウィジェットの内部処理が終わるのを待ってから検索を実行
+                try {
+                    // 方法1: 直接APIを叩く
+                    if (widget.search) {
+                        await widget.search(query);
+                    } 
+                    // 方法2: 属性を強制上書き
+                    widget.setAttribute('search-query', query);
+                    
+                    console.log("送信完了。結果を待っています...");
+                } catch (err) {
+                    console.error("検索エラー:", err);
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
