@@ -2,11 +2,21 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>テスト</title>
+  <title>AI検索テスト</title>
 </head>
 <body>
 
+  <!-- 表示確認用（これが出ればHTMLはOK） -->
   <h1>テスト表示</h1>
+
+  <!-- Google検索ウィジェット -->
+  <gen-search-widget
+    configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+    display-mode="inline">
+  </gen-search-widget>
+
+  <!-- これ絶対必要（消したら何も出ない） -->
+  <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
 </body>
 </html>
