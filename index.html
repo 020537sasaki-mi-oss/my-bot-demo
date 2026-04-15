@@ -2,19 +2,18 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>AIチャット（吹き出し型）</title>
 </head>
 <body>
 
-    <h1>AI検索テストページ</h1>
-    <p>右下にチャットアイコンが表示されるか確認してください。</p>
-
     <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <gen-search-widget
-      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-      display-mode="floating">
-    </gen-search-widget>
+    <div style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #ddd;">
+        
+        <gen-search-widget
+          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+          display-mode="inline"> </gen-search-widget>
+
+    </div>
 
 </body>
 </html>
