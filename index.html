@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIチャット デモ</title>
+    <title>AI Search 埋め込みテスト</title>
 </head>
 <body>
 
-    <div style="text-align: center; margin-top: 100px; font-family: sans-serif;">
-        <h2>社内システム用AIチャット</h2>
-        <p>右下のチャットアイコンをクリックして質問してください。</p>
-    </div>
+    <h2 style="text-align: center; font-family: sans-serif;">社内システム専用 AI検索窓</h2>
 
     <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <gen-search-widget
-      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e">
-    </gen-search-widget>
+    <div style="width: 100%; max-width: 900px; height: 700px; border: 2px solid #4285F4; border-radius: 12px; overflow: hidden; margin: 40px auto; background-color: #ffffff;">
+        
+        <gen-search-widget
+          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+          display-mode="inline">
+        </gen-search-widget>
+
+    </div>
+
+    <p style="text-align: center; color: #888; font-size: 13px;">
+        ※reCAPTCHAロゴが出ていれば、Googleとの接続はできています。
+    </p>
 
 </body>
 </html>
