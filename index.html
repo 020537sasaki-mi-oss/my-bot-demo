@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>AI Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Search テスト</title>
 </head>
+<body>
 
-<body style="margin:0; font-family:sans-serif;">
+    <h2 style="text-align: center; font-family: sans-serif; margin-top: 30px;">
+        社内システム用AIチャット（インライン版）
+    </h2>
 
-<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-<h2 style="text-align:center; margin-top:30px;">
-  社内AIチャット
-</h2>
+    <div style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        
+        <gen-search-widget
+          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+          display-mode="inline">
+        </gen-search-widget>
 
-<!-- ★ここ重要：高さを直接指定 -->
-<div style="
-  width: 100%;
-  max-width: 800px;
-  height: 700px;
-  margin: 30px auto;
-  border: 2px solid red; /* ←確認用 */
-">
+    </div>
 
-  <gen-search-widget
-    configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-    display-mode="inline">
-  </gen-search-widget>
-
-</div>
+    <p style="text-align: center; color: #666; font-size: 12px;">
+        ※反映まで時間がかかる場合があります。reCAPTCHAロゴが出ていれば通信は成功しています。
+    </p>
 
 </body>
 </html>
