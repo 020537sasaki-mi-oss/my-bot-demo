@@ -2,51 +2,55 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>自作検索バー版 AI検索</title>
+    <title>サイズ調整済み AI検索</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; background-color: #f5f5f5; text-align: center; }
-        
-        /* 自作検索バーのデザイン */
-        .search-container { margin-bottom: 20px; }
-        #mySearchInput {
-            width: 70%;
-            max-width: 500px;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: 2px solid #4285F4;
-            border-radius: 25px;
-            outline: none;
-        }
-        
-        /* AIの結果が出る枠 */
-        .result-frame {
-            width: 100%;
-            max-width: 900px;
-            height: 600px;
+        body { font-family: sans-serif; padding: 20px; background-color: #f5f5f5; }
+
+        /* 1. 全体を中央に寄せ、幅を制限する */
+        .main-wrapper {
+            max-width: 600px; /* ここでお好みの横幅に調整できます */
             margin: 0 auto;
-            background: white;
+        }
+
+        /* 2. 自作入力欄のデザイン */
+        .search-box {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* 枠線が外にはみ出ない設定 */
+            margin-bottom: 10px;
+        }
+
+        /* 3. ここが重要！結果が出る枠のサイズを固定する */
+        .ai-result-window {
+            width: 100%;
+            height: 500px; /* ここでお好みの高さに調整できます */
             border: 1px solid #ddd;
             border-radius: 8px;
-            overflow: hidden;
+            background-color: white;
+            overflow: hidden; /* 中身が暴れても外に出さない */
+            position: relative;
         }
     </style>
 </head>
 <body>
 
-    <h2>社内AI検索システム</h2>
+    <div class="main-wrapper">
+        <h2 style="text-align: center;">AI検索</h2>
 
-    <div class="search-container">
-        <input type="text" id="mySearchInput" placeholder="知りたいことを入力してEnter...">
-    </div>
+        <input type="text" id="myTrigger" class="search-box" placeholder="質問を入力...">
 
-    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+        <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <div class="result-frame">
-        <gen-search-widget
-          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-          display-mode="inline"
-          ui-name="custom"
-          triggerId="mySearchInput"> </gen-search-widget>
+        <div class="ai-result-window">
+            <gen-search-widget
+              configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+              display-mode="inline"
+              triggerId="myTrigger">
+            </gen-search-widget>
+        </div>
     </div>
 
 </body>
