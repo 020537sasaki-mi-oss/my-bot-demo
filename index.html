@@ -3,29 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Search テスト</title>
+    <title>AIチャット デモ</title>
 </head>
 <body>
 
-    <h2 style="text-align: center; font-family: sans-serif; margin-top: 30px;">
-        社内システム用AIチャット（埋め込み版）
-    </h2>
+    <div style="text-align: center; margin-top: 100px; font-family: sans-serif;">
+        <h2>社内システム用AIチャット</h2>
+        <p>右下のチャットアイコンをクリックして質問してください。</p>
+    </div>
 
     <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <div style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin: 20px auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-        
-        <gen-search-widget
-          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-          display-mode="inline"
-          search-ads-enabled="true">
-        </gen-search-widget>
-
-    </div>
-
-    <p style="text-align: center; color: #666; font-size: 12px;">
-        ※書き換え後、数分待ってからシークレットモードで確認してください。
-    </p>
+    <gen-search-widget
+      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e">
+    </gen-search-widget>
 
 </body>
 </html>
