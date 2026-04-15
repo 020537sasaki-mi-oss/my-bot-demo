@@ -2,36 +2,51 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIチャット 埋め込み完了版</title>
+    <title>自作検索バー版 AI検索</title>
     <style>
-        body { margin: 0; padding: 20px; background-color: #f5f5f5; font-family: sans-serif; }
-        .container { 
-            width: 100%; 
-            max-width: 900px; 
-            height: 750px; 
-            margin: 20px auto; 
-            background-color: white; 
-            border: 1px solid #ddd; 
-            border-radius: 8px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        body { font-family: sans-serif; padding: 20px; background-color: #f5f5f5; text-align: center; }
+        
+        /* 自作検索バーのデザイン */
+        .search-container { margin-bottom: 20px; }
+        #mySearchInput {
+            width: 70%;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #4285F4;
+            border-radius: 25px;
+            outline: none;
+        }
+        
+        /* AIの結果が出る枠 */
+        .result-frame {
+            width: 100%;
+            max-width: 900px;
+            height: 600px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 
-    <h2 style="text-align: center; color: #333;">社内AI検索システム</h2>
+    <h2>社内AI検索システム</h2>
+
+    <div class="search-container">
+        <input type="text" id="mySearchInput" placeholder="知りたいことを入力してEnter...">
+    </div>
 
     <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-    <div class="container">
+    <div class="result-frame">
         <gen-search-widget
           configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
           display-mode="inline"
-          show-search-bar="true">
-          &nbsp;
-        </gen-search-widget>
+          ui-name="custom"
+          triggerId="mySearchInput"> </gen-search-widget>
     </div>
 
 </body>
