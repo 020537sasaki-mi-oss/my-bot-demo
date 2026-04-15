@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>AI検索 完成版</title>
+    <title>AI検索 最終解決</title>
     <style>
         body { font-family: sans-serif; padding: 20px; background-color: #f5f5f5; }
         .main-wrapper { max-width: 600px; margin: 0 auto; }
@@ -21,11 +21,8 @@
 
     <div class="main-wrapper">
         <h2 style="text-align: center;">社内AI検索</h2>
-
         <input type="text" id="myInput" class="search-box" placeholder="質問を入力してEnter...">
-
-        <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
-
+        
         <div class="ai-result-window">
             <gen-search-widget
               id="myWidget"
@@ -35,28 +32,32 @@
         </div>
     </div>
 
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+
     <script>
         const input = document.getElementById('myInput');
         const widget = document.getElementById('myWidget');
 
-        input.addEventListener('keypress', function (e) {
+        input.addEventListener('keypress', async (e) => {
             if (e.key === 'Enter') {
                 const query = input.value;
                 if (!query) return;
 
-                console.log("検索実行中:", query);
+                console.log("検索リクエスト送信:", query);
 
-                // 💡 強制検索の3連撃
-                // 1. search() 関数を叩く
-                if (typeof widget.search === 'function') {
-                    widget.search(query);
+                // 💡 ウィジェットの内部処理が終わるのを待ってから検索を実行
+                try {
+                    // 方法1: 直接APIを叩く
+                    if (widget.search) {
+                        await widget.search(query);
+                    } 
+                    // 方法2: 属性を強制上書き
+                    widget.setAttribute('search-query', query);
+                    
+                    console.log("送信完了。結果を待っています...");
+                } catch (err) {
+                    console.error("検索エラー:", err);
                 }
-                
-                // 2. 属性を書き換えて、Google側に「変更」を検知させる
-                widget.setAttribute('search-query', query);
-                
-                // 3. inputイベントを捏造して、ウィジェットに「入力された」と思わせる
-                widget.dispatchEvent(new Event('input', { bubbles: true }));
             }
         });
     </script>
