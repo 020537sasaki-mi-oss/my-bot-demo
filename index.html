@@ -7,27 +7,25 @@
 
 <body style="margin:0; font-family:sans-serif;">
 
-<h2 style="text-align:center;">社内AIチャット</h2>
-
 <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-<!-- ★ここが重要：専用ラッパー -->
+<h2 style="text-align:center; margin-top:30px;">
+  社内AIチャット
+</h2>
+
+<!-- ★ここ重要：高さを直接指定 -->
 <div style="
   width: 100%;
   max-width: 800px;
+  height: 700px;
   margin: 30px auto;
+  border: 2px solid red; /* ←確認用 */
 ">
 
-  <!-- ★高さはここで確保 -->
-  <div style="
-    width: 100%;
-    height: 650px;
-  ">
-    <gen-search-widget
-      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-      display-mode="inline">
-    </gen-search-widget>
-  </div>
+  <gen-search-widget
+    configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+    display-mode="inline">
+  </gen-search-widget>
 
 </div>
 
