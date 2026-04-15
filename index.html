@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>AI検索テスト</title>
+    <meta charset="UTF-8">
+    <title>AIチャット 埋め込み完了版</title>
 </head>
 <body>
 
-  <!-- 表示確認用（これが出ればHTMLはOK） -->
-  <h1>テスト表示</h1>
+    <h2 style="text-align: center; font-family: sans-serif;">社内AI検索システム</h2>
 
-  <!-- Google検索ウィジェット -->
-  <gen-search-widget
-    configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-    display-mode="inline">
-  </gen-search-widget>
+    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
-  <!-- これ絶対必要（消したら何も出ない） -->
-  <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+    <div style="width: 100%; max-width: 800px; height: 700px; border: 1px solid #ddd; border-radius: 8px; margin: 20px auto; overflow: hidden;">
+        
+        <gen-search-widget
+          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+          display-mode="inline">
+        </gen-search-widget>
+
+    </div>
 
 </body>
 </html>
