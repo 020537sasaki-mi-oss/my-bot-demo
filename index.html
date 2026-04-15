@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>AI検索埋め込みテスト</title>
+  <meta charset="UTF-8">
+  <title>AI検索テスト</title>
 </head>
 <body>
 
-    <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
+  <div style="width: 100%; max-width: 800px; height: 600px; margin: 40px auto;">
+    
+    <gen-search-widget
+      configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
+      display-mode="inline">
+    </gen-search-widget>
 
-    <div style="width: 100%; max-width: 800px; height: 600px; border: 1px solid #ddd; margin: 20px auto;">
-        
-        <gen-search-widget
-          configId="5f5ca5b8-1cb4-464f-8202-2e24e82d913e"
-          display-mode="inline"> </gen-search-widget>
+  </div>
 
-    </div>
+  <!-- scriptは一番下に置く -->
+  <script src="https://cloud.google.com/ai/gen-app-builder/client?hl=ja"></script>
 
 </body>
 </html>
